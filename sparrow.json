@@ -1,0 +1,7 @@
+{
+  "name" : "lvm",
+  "version" : "0.1.0",
+  "description" : "basic lvm manage",
+  "category" : "utilities",
+  "url" : "https://github.com/Spigell/lvm"
+}
