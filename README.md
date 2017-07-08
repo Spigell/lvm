@@ -12,7 +12,7 @@ Manage your logical volume and volume group via sparrow/sparrowdo.
 
 ## manually
 
-    $ sparrow plg run lvm --param partition=/dev/sda1 --param size=7G
+    $ sparrow plg run lvm --param partition=/dev/sda1 --param size=7G --param vg=vg_main --param lv=slashroot
 
 ## via Sparrowdo
 
@@ -20,6 +20,7 @@ Manage your logical volume and volume group via sparrow/sparrowdo.
 
     task-run "create main lv", "lvm", %(
       action    => 'create',
+      recreate  => 'true',
       partition => '/dev/sda1',
       vg        => 'vg_main',
       lv        => 'slashroot',
@@ -57,4 +58,8 @@ Size of lvm. Only in `create` action.
 
 ## force
 
-flag for forced operation. Only in `remove` action.
+flag for forced operation. Umount mountpoint and destroy old logical volume. 
+Only in `remove` action.
+
+## recreate
+flag for create new logical volume if It's already created. Destroy old. Only in `create` action.

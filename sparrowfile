@@ -1,0 +1,11 @@
+my $disk = "/dev/sdb";
+my $part = "/dev/sdb1";
+
+bash "parted $disk mklabel gpt";
+bash "parted -s $disk mkpart P1 2Mib 4Gib";
+
+EVALFILE './examples/create.pl6';
+EVALFILE './examples/remove.pl6';
+
+EVALFILE './examples/create.pl6';
+EVALFILE './examples/create_force.pl6';
