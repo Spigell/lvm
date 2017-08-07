@@ -68,6 +68,9 @@ Add some space for a logical volume.
 ### reduce
 Reduce some space for a logical volume.
 
+### resize-fs
+A flag for online resizing fs. Optional. Default is `true`.
+
 ## Remove action
 ### force
 A flag for forced operation. Unmount a mountpoint and destroy an old logical volume. Optional.
